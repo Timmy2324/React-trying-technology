@@ -1,0 +1,25 @@
+.on_off {
+    display: flex;
+    align-items: center;
+}
+
+.box {
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.lightBulb {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.on {
+    background-color: green;
+}
+
+.off {
+    background-color: red;
+}
