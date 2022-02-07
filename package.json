@@ -52,6 +52,9 @@
       "last 1 safari version"
     ]
   },
+  "peerDependencies": {
+    "babel-loader": "8.1.0"
+  },
   "devDependencies": {
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
