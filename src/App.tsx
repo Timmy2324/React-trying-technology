@@ -19,7 +19,7 @@ function App() {
             Article 1
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <UncontrolledOnOff />
-            <Accordion titleValue={'Menu'} collapsed={accordionCollapsed} onChange={() => setAccordionCollapsed(!accordionCollapsed)}/>
+            <Accordion titleValue={'Menu'} collapsed={accordionCollapsed} items={[{title: 'kek', value: 1}, {title: 'lol', value: 2}]} onClick={(kek: string) => alert(kek) } onChange={() => setAccordionCollapsed(!accordionCollapsed)}/>
             Article 2
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <OnOff on={switchOn} onChange={setSwitchOn}/>
