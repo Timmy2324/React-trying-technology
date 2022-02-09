@@ -32,3 +32,29 @@ export const ControlledWithFixedValue = Template.bind({});
 ControlledWithFixedValue.args = {
   value: 'kek'
 };
+
+export const ControlledInput: ComponentStory<any> = (args) => {
+
+  const [parentValue, setParentValue] = useState<string>('');
+
+  return <><input value={parentValue} {...args} onChange={(e) => setParentValue(e.currentTarget.value)}/></>
+};
+
+export const ControlledCheckBox: ComponentStory<any> = (args) => {
+
+  const [parentValue, setParentValue] = useState<boolean>(false);
+
+  return <><input type={'checkbox'} checked={parentValue} {...args} onChange={(e) => setParentValue(e.currentTarget.checked)}/></>
+};
+
+export const ControlledSelect: ComponentStory<any> = () => {
+
+  const [parentValue, setParentValue] = useState<string | undefined>(undefined);
+
+  return <select value={parentValue} onChange={e => setParentValue(e.currentTarget.value)}>
+    <option>none</option>
+    <option value={1}>Kek</option>
+    <option value={2}>lol</option>
+    <option value={3}>KekWait</option>
+  </select>
+};
