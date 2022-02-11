@@ -1,0 +1,26 @@
+.select {
+    border: 1px solid black;
+    position: relative;
+    width: 60px;
+    height: 30px;
+}
+
+.selectHeader {
+    width: 60px;
+    height: 30px;
+    margin: 0;
+}
+
+.items {
+    position: absolute;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.select.active .items {
+    display: block;
+}
+
+.item.selected {
+    background: #1ea7fd;
+}
