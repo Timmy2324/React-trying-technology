@@ -7,7 +7,9 @@ type RatingPropsType = {
     onClick: (ratingValue: RatingValueType) => void
 }
 
-export function Rating(props: RatingPropsType) {
+export const Rating = React.memo(RatingMemo);
+
+function RatingMemo(props: RatingPropsType) {
 
     return (
         <div>

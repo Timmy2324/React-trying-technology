@@ -4,7 +4,9 @@ type UncontrolledRatingPropsType = {
 
 }
 
-export function UncontrolledRating(props: UncontrolledRatingPropsType) {
+export const UncontrolledRating = React.memo(UncontrolledRatingMemo);
+
+function UncontrolledRatingMemo(props: UncontrolledRatingPropsType) {
 
     let [countStars, setCountStars] = useState(0);
 

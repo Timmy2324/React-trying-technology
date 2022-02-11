@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 
 
 type OnOfPropsType = {
@@ -6,7 +6,9 @@ type OnOfPropsType = {
     onChange: (on: boolean) => void,
 }
 
-export function OnOff(props: OnOfPropsType) {
+export const OnOff = React.memo(OnOffMemo);
+
+function OnOffMemo(props: OnOfPropsType) {
 
     const onOffStyle = {
         display: "flex",

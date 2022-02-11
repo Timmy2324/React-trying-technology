@@ -3,7 +3,9 @@ import React, {useState} from "react";
 
 type OnOfPropsType = {}
 
-export function UncontrolledOnOff(props: OnOfPropsType) {
+export const UncontrolledOnOff = React.memo(UncontrolledOnOffMemo);
+
+function UncontrolledOnOffMemo(props: OnOfPropsType) {
 
     let [on, setOn] = useState(false);
 

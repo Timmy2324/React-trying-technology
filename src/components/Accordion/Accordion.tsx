@@ -13,7 +13,9 @@ type AccordionPropsType = {
     onClick: (value: any) => void
 }
 
-export function Accordion(props: AccordionPropsType) {
+export const Accordion = React.memo(AccordionMemo);
+
+function AccordionMemo(props: AccordionPropsType) {
     return (
         <div>
             <AccordionTitle title={props.titleValue} onChange={props.onChange} collapsed={props.collapsed}/>
