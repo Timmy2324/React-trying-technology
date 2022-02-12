@@ -10,12 +10,11 @@ const Counter = (props: {count: number}) => {
     return <div>{props.count}</div>
 }
 
-const UsersSecret = (props: {users: Array<string>}) => {
-    console.log('Kek')
+const UsersMemo = (props: {users: Array<string>}) => {
     return <div>{props.users.map((user, i) => <div key={i}>{user}</div>)}</div>
 }
 
-const Users = React.memo(UsersSecret);
+const Users = React.memo(UsersMemo);
 
 export const Example1 = () => {
     const [counter, setCounter] = useState<number>(0);
@@ -28,9 +27,3 @@ export const Example1 = () => {
         <Users users={users}/>
     </div>
 }
-
-// export const RatingChanged: ComponentStory<typeof Rating> = (args) => {
-//     const [ratingValue, setRatingValue] = useState<RatingValueType>(5);
-//
-//     return <Rating {...args} value={ratingValue} onClick={setRatingValue}/>
-// }
