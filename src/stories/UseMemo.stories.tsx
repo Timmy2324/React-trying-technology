@@ -1,4 +1,4 @@
-import React, {useMemo, useState} from "react";
+import React, {useCallback, useMemo, useState} from "react";
 
 
 export default {
@@ -66,5 +66,46 @@ export const Example2 = () => {
         <button onClick={() => addUser()}>+</button>
         <Counter count={counter}/>
         <Users users={filterUsers}/>
+    </div>
+}
+
+type BooksMemo = {
+    // books: Array<string>
+    addBook: () => void
+}
+
+const BooksMemo = (props: BooksMemo) => {
+    return <div>
+        <button onClick={props.addBook}>+</button>
+        {/*{props.books.map((book, i) => <div key={i}>{book}</div>)}*/}
+    </div>
+}
+
+const Books = React.memo(BooksMemo);
+
+
+export const ExampleUseCallback = () => {
+    const [counter, setCounter] = useState<number>(0);
+    const [books, setBooks] = useState<Array<string>>(['Book1', 'Book2', 'Book3', 'Kek']);
+
+    const filterBooks = useMemo(() => {
+        return books.filter(u => u.toLowerCase().indexOf('o') > -1);
+    }, [books])
+
+    // const addBook = () => {
+    //     setBooks([...books, 'kok'])
+    // }
+
+    const addBook2 = useCallback( () => {
+        setBooks([...books, 'kok'])
+    }, [books])
+
+    // const memoAddBook = useMemo(() => addBook2, [books]);
+
+    return <div>
+        <button onClick={() => setCounter(counter + 1)}>+</button>
+
+        <Counter count={counter}/>
+        <Books addBook={addBook2}/>
     </div>
 }
