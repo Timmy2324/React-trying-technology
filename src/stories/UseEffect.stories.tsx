@@ -23,3 +23,51 @@ export const Example1 = () => {
         {counter}
     </div>
 }
+
+export const SetTimeoutExample = () => {
+    const [counter, setCounter] = useState<number>(1);
+    const [counter2, setCounter2] = useState<number>(2);
+
+    useEffect(() => {
+        setTimeout(() => {
+            console.log('lel')
+        }, 1000)
+    }, [counter])
+
+
+
+    return <div>
+        <button onClick={() => setCounter(counter + 1)}>+</button>
+        {counter}
+        <button onClick={() => setCounter2(counter2 + 1)}>+</button>
+        {counter2}
+    </div>
+}
+
+export const SetIntervalExample = () => {
+    const [counter, setCounter] = useState<number>(1);
+    const [counter2, setCounter2] = useState<number>(2);
+    const [date, setDate] = useState<string>();
+
+
+    useEffect(() => {
+        setInterval(() => {
+            setDate(() => {
+                let a = new Date();
+                return a.toLocaleTimeString();
+            })
+        }, 1000);
+    }, [])
+
+
+
+    return <div>
+        <button onClick={() => setCounter(counter + 1)}>+</button>
+        {counter}
+        <button onClick={() => setCounter2(counter2 + 1)}>+</button>
+        {counter2}
+        <div>
+            {date}
+        </div>
+    </div>
+}
