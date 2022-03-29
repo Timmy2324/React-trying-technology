@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 
-
 export default {
     title: 'UseEffect',
 }
@@ -69,5 +68,20 @@ export const SetIntervalExample = () => {
         <div>
             {date}
         </div>
+    </div>
+}
+
+export const ResetEffectExample = () => {
+    const [counter, setCounter] = useState<number>(1);
+
+    useEffect(() => {
+        console.log('new counter' + counter)
+        return () => {console.log('last counter' + counter)}
+    }, [counter])
+
+    const increase = () => {setCounter(counter + 1)}
+
+    return <div>
+        {counter} <button onClick={increase}>+</button>
     </div>
 }
